@@ -6,115 +6,115 @@ window.addEventListener('DOMContentLoaded', (event) => {
     var cartes = [
         {
             nom: 'Le Soleil',
-            image: 'sun.jpg',
+            image: './images/sun.jpg',
             signification: 'joie, bonheur, succès'
         },
         {
             nom: "L'Amoureux",
-            image: 'lover.jpg',
+            image: './images/lover.jpg',
             signification: 'amour, relation, choix'
         },
         {
             nom: 'La Mort',
-            image: 'mort.jpg',
+            image: './images/mort.jpg',
             signification: 'transformation, changement, renouveau'
         }
     ,
     {
         nom: "L'étoile",
-        image: 'star.jpg',
+        image: './images/star.jpg',
         signification: 'transformation, changement, renouveau'
     },
     {
         nom: "La roue de fortune",
-        image: 'rouefortune.jpg',
+        image: './images/rouefortune.jpg',
         signification: 'transformation, changement, renouveau'
     },
     {
         nom: "Le diable",
-        image: 'diable.jpg',
+        image: './images/diable.jpg',
         signification: 'transformation, changement, renouveau'
     },
     {
         nom: "Le pendu",
-        image: 'pendu.jpg',
+        image: './images/pendu.jpg',
         signification: 'transformation, changement, renouveau'
     },
     {
         nom: 'Le Soleil',
-        image: 'sun.jpg',
+        image: './images/sun.jpg',
         signification: 'joie, bonheur, succès'
     },
     {
         nom: "L'Amoureux",
-        image: 'lover.jpg',
+        image: './images/lover.jpg',
         signification: 'amour, relation, choix'
     },
     {
         nom: 'La Mort',
-        image: 'mort.jpg',
+        image: './images/mort.jpg',
         signification: 'transformation, changement, renouveau'
     }
 ,
 {
     nom: "L'étoile",
-    image: 'star.jpg',
+    image: './images/star.jpg',
     signification: 'transformation, changement, renouveau'
 },
 {
     nom: "La roue de fortune",
-    image: 'rouefortune.jpg',
+    image: './images/rouefortune.jpg',
     signification: 'transformation, changement, renouveau'
 },
 {
     nom: "Le diable",
-    image: 'diable.jpg',
+    image: './images/diable.jpg',
     signification: 'transformation, changement, renouveau'
 },
 {
     nom: "Le pendu",
-    image: 'pendu.jpg',
+    image: './images/pendu.jpg',
     signification: 'transformation, changement, renouveau'
 },
 {
     nom: 'Le Soleil',
-    image: 'sun.jpg',
+    image: './images/sun.jpg',
     signification: 'joie, bonheur, succès'
 },
 {
     nom: "L'Amoureux",
-    image: 'lover.jpg',
+    image: './images/lover.jpg',
     signification: 'amour, relation, choix'
 },
 {
     nom: 'La Mort',
-    image: 'mort.jpg',
+    image: './images/mort.jpg',
     signification: 'transformation, changement, renouveau'
 }
 ,
 {
 nom: "L'étoile",
-image: 'star.jpg',
+image: './images/star.jpg',
 signification: 'transformation, changement, renouveau'
 },
 {
 nom: "La roue de fortune",
-image: 'rouefortune.jpg',
+image: './images/rouefortune.jpg',
 signification: 'transformation, changement, renouveau'
 },
 {
 nom: "Le diable",
-image: 'diable.jpg',
+image: './images/diable.jpg',
 signification: 'transformation, changement, renouveau'
 },
 {
 nom: "Le pendu",
-image: 'pendu.jpg',
+image: './images/pendu.jpg',
 signification: 'transformation, changement, renouveau'
 },
 {
 nom: "Le pendu",
-image: 'pendu.jpg',
+image: './images/pendu.jpg',
 signification: 'transformation, changement, renouveau'
 }
     ];
