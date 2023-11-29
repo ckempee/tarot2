@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -27,41 +28,123 @@
     </div>
 
 
-    <div class="tarot">
+    <div class="tarot" id="blur">
     <div class="carteChoisies">
-        <div class="carteChoisie" id="choisie1"></div>
-        <div class="carteChoisie" id="choisie2"></div>
-        <div class="carteChoisie" id="choisie3"></div>
-
+        <div class="carteChoisie" id="choisie1" onclick="returnCard(this)"></div>
+        <div class="carteChoisie" id="choisie2" onclick="returnCard(this)"></div>
+        <div class="carteChoisie" id="choisie3" onclick="returnCard(this)"></div>
     </div>
     <div class="choixCartes">
-        <div class="cards" onclick="moveCard(this)"></div>
-        <div class="cards" onclick="moveCard(this)"></div>
-        <div class="cards" onclick="moveCard(this)"></div>
-        <div class="cards" onclick="moveCard(this)"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
-        <div class="cards"></div>
+        <div class="cards" onclick="moveCard(this)">
+            
+                <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+            <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+            <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+            <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
        
         
     </div>
     
 </div>
+
+<div id="popUp">
+    <i class="fa-solid fa-xmark fa-2xl" onclick="toggle()"></i>
+    <h1>Votre Tirage</h1>
+    <div class="interpretationCartes">
+        
+    </div>
+    <div class="resultat">
+        
+    </div>
+    
+    <a href="./tirage.html"> Recommencer</a>
+    
+</div>
+<script src="./script2.js"></script>
     <script src="./script.js"></script>
+    
 </body>
 </html>

@@ -167,6 +167,11 @@ margin-bottom: 20px;
 .carteChoix:hover{
     background-color: #d97c5c;
 }
+
+.carteChoix:hover button{
+    background-color: antiquewhite;
+    color: #d97c5c;
+}
 .imageChoix{
     width: 100%;
     height: 125px;
@@ -187,14 +192,30 @@ margin-bottom: 20px;
     text-align: center;
 }
 
-button {
-    left:8px;
+.texteChoix button {
+    
+    background-color: #d97c5c;
+    color: antiquewhite;
+    width: 100%;
+    height: 35px;
+    border:none;
+    margin-top: 5px;
+    font-family: 'Noto Serif NP Hmong', serif;
+    cursor: pointer;
 }
 
 
 /*carte choix*/
 .tarot{
     display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#blur.active{
+    filter:blur(20px);
+    pointer-events: none;
+
 }
 .carteChoisies{
     width: 50%;
@@ -231,7 +252,7 @@ border-radius:5%;
     background-position: right 35% bottom 25%;
 }
 .cards{
-    width: 105px;
+    width: 100px;
     height: 171px;
     border-radius: 10px;
     background-image: url(./carteTarots.jpg);
@@ -240,6 +261,41 @@ border-radius:5%;
     position: relative;
     display: inline-block;  
     transition: all .2s ease-in;
+    border: 5px solid white;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.cards:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+.cards.flip {
+    transform: rotateY(180deg);
+  }
+
+  
+.back,
+.front{
+  width: 100%;
+  height: 100%;
+  /* padding: 20px; */
+  position: absolute;
+  border-radius: 5px;
+  background: burlywood;
+  backface-visibility: hidden;
+}
+
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.cards img{
+    width: 100%;
+    height: 100%;
 }
 
 .cards:hover {
@@ -247,4 +303,32 @@ border-radius:5%;
     transform: translateY(-20px) rotate(10deg);
   }
 
+.newCard {
+    width: 125px;
+    height: 210px;
+    background-color: blueviolet;
+}
+
+#popUp{
+    position: fixed;
+    margin:auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height:550px;
+    padding:25px;
+    box-shadow: 0 5px 30px  rgba(0,0,0.30);
+    background-color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition:0.5s;
+}
+
+#popUp.active{
+visibility: visible;
+opacity:1;
+transition: 0.5s;
+top:50%;
+}
 
