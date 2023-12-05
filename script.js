@@ -44,9 +44,12 @@ function toggle() {
  
          console.log("Nom de la carte : ", cardName);
          console.log("Signification de la carte : ", cardSignification);
-         const paragraph=document.createElement('p');
+         const paragraph=document.createElement('div');
          paragraph.innerHTML = `<strong>Carte ${index + 1} (${cardName}):</strong> ${cardSignification}`;
          divInterpretation.appendChild(paragraph);
+         paragraph.classList='carteUser';
+         paragraph.id=cardName;
+         paragraph.dataset.signification=cardSignification;
      });
     }
      else{
