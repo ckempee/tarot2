@@ -1,4 +1,5 @@
 // script.js
+//sk-proj-SzndVpPFodBKE0GShgd4T3BlbkFJqGAvcF6CErevYbaEjbEL= api
 
 let selectedCards = 0;
 
@@ -11,7 +12,7 @@ function moveCard(card) {
         newCard.style.position = 'absolute';
         newCard.style.transition = 'transform 0.6s ease';
         newCard.classList.add('newCard');
-      
+
         const destination = document.getElementById(`choisie${selectedCards}`);
         destination.appendChild(newCard);
 
@@ -26,47 +27,133 @@ function moveCard(card) {
     }
 }
 
-function toggle() {
+async function toggle() {
     var blur = document.getElementById('blur');
     blur.classList.toggle('active');
     var popUp = document.getElementById('popUp');
     popUp.classList.toggle('active');
 
-    if (popUp.classList.contains('active')) {
-        // Afficher les significations des cartes sélectionnées
-     const chosenCards = document.querySelectorAll('.newCard');
-     const divInterpretation= document.querySelector('.interpretationCartes');
-    
-     chosenCards.forEach((card, index) => {
+    const chosenCards = document.querySelectorAll('.newCard');
+    const cards = Array.from(chosenCards).map(card => {
         const frontImg = card.querySelector('.front');
-        const cardName = frontImg.id; // Récupérer le nom de la carte
-        const cardSignification = frontImg.dataset.signification; // Récupérer la signification de la carte
- 
-         console.log("Nom de la carte : ", cardName);
-         console.log("Signification de la carte : ", cardSignification);
-         const paragraph=document.createElement('div');
-         paragraph.innerHTML = `<strong>Carte ${index + 1} (${cardName}):</strong> ${cardSignification}`;
-         divInterpretation.appendChild(paragraph);
-         paragraph.classList='carteUser';
-         paragraph.id=cardName;
-         paragraph.dataset.signification=cardSignification;
-     });
+        return {
+            nom: frontImg.id,
+            signification: frontImg.dataset.signification
+        };
+    });
+
+    const divInterpretation = document.querySelector('.interpretationCartes');
+    if (popUp.classList.contains('active')) {
+        divInterpretation.innerHTML = ''; // Clear previous content
+
+        // paragraphe avec un rappel des 3 cartes tirées
+        const reminderParagraph = document.createElement('div');
+        reminderParagraph.innerHTML = `<strong>Cartes tirées :</strong><br>
+        1. ${cards[0].nom} : ${cards[0].signification}<br>
+        2. ${cards[1].nom} : ${cards[1].signification}<br>
+        3. ${cards[2].nom} : ${cards[2].signification}<br><br>`;
+        divInterpretation.appendChild(reminderParagraph);
+
+        // Vérifier s'il y a une interprétation précédemment enregistrée
+        const previousInterpretation = localStorage.getItem('tarotInterpretation');
+        if (previousInterpretation) {
+            const interpretationParagraph = document.createElement('div');
+            interpretationParagraph.innerHTML = `<strong>Interprétation :</strong><br>${previousInterpretation}`;
+            divInterpretation.appendChild(interpretationParagraph);
+        } else {
+            try {
+                // 1. j'appelle chatgpt
+                const interpretation = await getChatGPTInterpretation(cards);
+
+                // j'affiche le pop up
+                const interpretationParagraph = document.createElement('div');
+                interpretationParagraph.innerHTML = `<strong>Interprétation :</strong><br>${interpretation}`;
+                divInterpretation.appendChild(interpretationParagraph);
+
+                // j'enregistre localement l'interprétation fournie par chatgpt 
+                localStorage.setItem('tarotInterpretation', interpretation);
+            } catch (error) {
+                console.error('Erreur lors de la récupération de l\'interprétation:', error);
+                const errorParagraph = document.createElement('div');
+                errorParagraph.innerHTML = `<strong>Erreur :</strong> Impossible de récupérer l'interprétation. Veuillez réessayer plus tard.`;
+                divInterpretation.appendChild(errorParagraph);
+            }
+        }
+    } else {
+        divInterpretation.innerHTML = '';
     }
-     else{
-        const divInterpretation= document.querySelector('.interpretationCartes');
-        divInterpretation.innerHTML='';
-     }// Appel de la fonction pour afficher les infos des cartes choisies
-    
+}
+// fonction chatgpt qui me permet de générer un texte en lui donnant mes 3 cartes yeaaaaaah
+async function getChatGPTInterpretation(cards) {
+    showLoadingBalls();
+    const apiKey = 'sk-proj-SzndVpPFodBKE0GShgd4T3BlbkFJqGAvcF6CErevYbaEjbEL';
+    const url = 'https://api.openai.com/v1/chat/completions';
 
-    
+    const messages = [
+        {"role": "system", "content": "Tu es un assistant utile pour l'interprétation des tarots culinaires afin de donner des prédictions."},
+        {"role": "user", "content": `Voici trois cartes de tarot culinaire avec leurs significations :
+1. ${cards[0].nom} : ${cards[0].signification}
+2. ${cards[1].nom} : ${cards[1].signification}
+3. ${cards[2].nom} : ${cards[2].signification}
+        
+Fournis une interprétation détaillée et personnalisée de ces trois cartes en faisant des liens entre elles, en proposant par exemple des menus de la semaine, des types d'aliments que l'utilisateur pourrait manger en fonction des cartes tirés, de quoi son corps à besoin. 
+Il s'agit d'une prédiction, c'est-à-dire: La méthode de tirage des cartes de tarot pour faire des prédictions culinaires offre des réponses précises à vos questions sur la cuisine. Que ce soit pour des idées de menus, des conseils pour améliorer vos compétences ou des suggestions d'ingrédients, ce tirage fournit des informations claires et ciblées pour enrichir votre expérience culinaire.
+Je veux que tu fasses comme si c'était moi qui parlait afin que les gens ne se doutent pas qu'il s'agit d'un texte généré par chatgpt donc pas de 'bien sur' etc. 
+Je veux aussi que tu ne coupe pas le texte au milieu d'une phrase.`}
+    ];
 
-     
- }
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            model: 'gpt-3.5-turbo',
+            messages: messages,
+            max_tokens: 500
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error('Erreur lors de la communication avec l\'API OpenAI');
+    }
+
+    const data = await response.json();
+    hideLoadingBalls(); // Cette ligne est déplacée ici pour être exécutée après la réponse de l'API
+    return data.choices[0].message.content.trim();
+}
 
 
 // Fonction pour recommencer
 function restart() {
+    // je supprime l'intérprétation enregistré localement
+    localStorage.removeItem('tarotInterpretation');
+    // je recharge la page
     location.reload();
 }
 
+// Fonction pour supprimer l'interprétation lorsque l'utilisateur quitte la page
+window.addEventListener('beforeunload', function(event) {
+    localStorage.removeItem('tarotInterpretation');
+});
 
+
+
+
+// Récupérer les éléments des boules de chargement
+const balls = document.querySelectorAll('.loading-ball');
+
+// Fonction pour afficher les boules de chargement
+function showLoadingBalls() {
+    balls.forEach(ball => {
+        ball.style.display = 'block';
+    });
+}
+
+// Fonction pour cacher les boules de chargement
+function hideLoadingBalls() {
+    balls.forEach(ball => {
+        ball.style.display = 'none';
+    });
+}
