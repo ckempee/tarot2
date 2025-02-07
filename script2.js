@@ -7,115 +7,115 @@ window.addEventListener('DOMContentLoaded', (event) => {
         {
             nom: 'Le Soleil',
             image: './images/sun.jpg',
-            signification: 'joie, bonheur, succès'
+            signification: 'Joie, clarté, succès, vitalité, optimisme'
         },
         {
             nom: "L'Amoureux",
             image: './images/lover.jpg',
-            signification: 'amour, relation, choix'
+            signification: 'Choix, amour, désir, relation, dualité'
         },
         {
             nom: 'La Mort',
             image: './images/mort.jpg',
-            signification: 'transformation, changement, renouveau'
+            signification: 'Transformation, fin, renouveau, transition, libération'
         }
     ,
     {
         nom: "L'étoile",
         image: './images/star.jpg',
-        signification: 'transformation, changement, renouveau'
+        signification: 'Espoir, inspiration, sérénité, guidance, foi'
     },
     {
         nom: "La roue de fortune",
         image: './images/rouefortune.jpg',
-        signification: 'transformation, changement, renouveau'
+        signification: 'Destin, changement, cycle, opportunité, hasard'
     },
     {
         nom: "Le diable",
         image: './images/diable.jpg',
-        signification: 'transformation, changement, renouveau'
+        signification: 'Attachement, tentation, passion, obsession, pouvoir'
     },
     {
         nom: "Le pendu",
         image: './images/pendu.jpg',
-        signification: 'transformation, changement, renouveau'
+        signification: 'Sacrifice, lâcher-prise, perspective, pause, renoncement'
     },
     {
-        nom: 'Le Soleil',
+        nom: 'Le mat',
         image: './images/sun.jpg',
-        signification: 'joie, bonheur, succès'
+        signification: 'Liberté, aventure, spontanéité, naïveté, insouciance'
     },
     {
-        nom: "L'Amoureux",
+        nom: "Le bateleur",
         image: './images/lover.jpg',
-        signification: 'amour, relation, choix'
+        signification: 'Potentiel, initiative, créativité, action, habileté'
     },
     {
-        nom: 'La Mort',
+        nom: 'La Papesse',
         image: './images/mort.jpg',
-        signification: 'transformation, changement, renouveau'
+        signification: 'Sagesse, intuition, secret, connaissance, introspection'
     }
 ,
 {
-    nom: "L'étoile",
+    nom: "L'impératrice",
     image: './images/star.jpg',
-    signification: 'transformation, changement, renouveau'
+    signification: 'Fécondité, communication, beauté, abondance, créativité'
 },
 {
-    nom: "La roue de fortune",
+    nom: "L'empereur",
     image: './images/rouefortune.jpg',
-    signification: 'transformation, changement, renouveau'
+    signification: 'Autorité, stabilité, pouvoir, structure, contrôle'
 },
 {
-    nom: "Le diable",
+    nom: "Le pape",
     image: './images/diable.jpg',
-    signification: 'transformation, changement, renouveau'
+    signification: 'Tradition, spiritualité, enseignement, foi, guidance'
 },
 {
-    nom: "Le pendu",
+    nom: "Le chariot",
     image: './images/pendu.jpg',
-    signification: 'transformation, changement, renouveau'
+    signification: 'Volonté, succès, détermination, maîtrise, progression'
 },
 {
-    nom: 'Le Soleil',
+    nom: 'La Justice',
     image: './images/sun.jpg',
-    signification: 'joie, bonheur, succès'
+    signification: 'Équilibre, vérité, loi, responsabilité, intégrité'
 },
 {
-    nom: "L'Amoureux",
+    nom: "L'hermite",
     image: './images/lover.jpg',
-    signification: 'amour, relation, choix'
+    signification: 'agesse, solitude, réflexion, quête intérieure, prudence'
 },
 {
-    nom: 'La Mort',
+    nom: 'La Force',
     image: './images/mort.jpg',
-    signification: 'transformation, changement, renouveau'
+    signification: 'Courage, maîtrise de soi, patience, résilience, énergie'
 }
 ,
 {
-nom: "L'étoile",
+nom: "La Tempérance",
 image: './images/star.jpg',
-signification: 'transformation, changement, renouveau'
+signification: 'Harmonie, équilibre, modération, guérison, adaptation'
 },
 {
-nom: "La roue de fortune",
+nom: "La maison de Dieu",
 image: './images/rouefortune.jpg',
-signification: 'transformation, changement, renouveau'
+signification: 'Rupture, choc, révélation, crise, libération'
 },
 {
-nom: "Le diable",
+nom: "La Lune",
 image: './images/diable.jpg',
-signification: 'transformation, changement, renouveau'
+signification: 'Illusion, intuition, mystère, confusion, rêves'
 },
 {
-nom: "Le pendu",
+nom: "Le jugement",
 image: './images/pendu.jpg',
-signification: 'transformation, changement, renouveau'
+signification: 'Révélation, renaissance, appel, conscience, évaluation'
 },
 {
-nom: "Le pendu",
+nom: "Le monde",
 image: './images/pendu.jpg',
-signification: 'transformation, changement, renouveau'
+signification: 'Accomplissement, plénitude, réalisation, unité, succès'
 }
     ];
 

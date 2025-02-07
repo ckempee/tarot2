@@ -389,3 +389,138 @@ top:50%;
 .loading-ball:nth-child(3) {
     animation-delay: 0.4s; /* Décalage de l'animation pour la troisième boule */
 }
+
+
+
+
+
+
+
+
+/*Page About pour expliquer le projet*/
+.principaleAbout{
+    width: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin-bottom: 25px;
+}
+
+.imageExplication{
+width: 25%;
+flex: auto;
+float: left;
+}
+
+.explications{
+    width: 48%;
+    float: right;
+    flex: auto;
+    overflow: hidden;
+    }
+
+.explication{
+    margin-top: 15px;
+}
+
+.explications h2{
+    color: #d97c5c;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin: 0;
+    margin-bottom: 5px;
+    
+}
+
+.explication h3{
+    color: #d97c5c;
+    font-family: 'Playfair Display', serif;
+    text-align: justify;
+    margin: 0;
+    
+}
+
+.explication span{
+    font-family: 'Playfair Display', serif;
+    text-align: justify;
+    margin: 0;
+    font-size: 0.9rem;
+    
+}
+
+/*Page contact pour me présenter*/
+.contactPage{
+    width: 90%;
+    display: flex;
+    height: 650px;
+    overflow: hidden;
+}
+
+.imageContact{
+    display: auto;
+    width: 30%;
+    padding: 25px;
+    height: 100%;
+}
+
+.imageContact img{
+    padding-top: 30px;
+    padding-left:100px;
+    height: 600px;
+}
+
+.textContact{
+    display: auto;
+    width: 80%;
+    padding: 25px;
+}
+
+.textContact h4{
+    color: #d97c5c;
+    font-size: 1rem;
+    font-style:oblique;
+    margin: 0;
+}
+.textContact h3 img{
+    height: 45px;
+    width: 30px;
+} 
+
+.textContact h3{
+    color: #d97c5c;
+    font-family: 'Playfair Display', serif;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.textContact span{
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+}
+.social{
+    padding-top: 30px;
+}
+
+
+
+.social-icons{
+display:flexbox;
+width: 50px;
+height: 30px;
+float: right;
+}
+
+.social-icons img{
+    width: 40px;
+    height: 40px;
+}
+
+
+

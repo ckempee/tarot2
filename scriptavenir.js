@@ -100,9 +100,8 @@ async function getChatGPTInterpretation(cards) {
 2. ${cards[1].nom} : ${cards[1].signification}
 3. ${cards[2].nom} : ${cards[2].signification}
         
-Fournis une interprétation détaillée et personnalisée de ces trois cartes en faisant des liens entre elles, en proposant par exemple des menus de la semaine, des types d'aliments que l'utilisateur pourrait manger en fonction des cartes tirés, de quoi son corps à besoin. 
-Il s'agit d'une prédiction, c'est-à-dire: La méthode de tirage des cartes de tarot pour faire des prédictions culinaires offre des réponses précises à vos questions sur la cuisine. Que ce soit pour des idées de menus, des conseils pour améliorer vos compétences ou des suggestions d'ingrédients, ce tirage fournit des informations claires et ciblées pour enrichir votre expérience culinaire.
-Je veux que tu fasses comme si c'était moi qui parlait afin que les gens ne se doutent pas qu'il s'agit d'un texte généré par chatgpt donc pas de 'bien sur' etc. 
+Lis l'avenir de la personne de manière personnalisée en fonction de ces trois cartes de taot en faisant des liens entre elles. Agis comme une grande voyante ou une grande tireuse de carte qui guide et donne des réponses.
+Les cartes, dans l'ordre, corresponde à 'présent, passé, futur' ou à 'Situation - Défi - Évolution'. Je veux que tu fasses comme si c'était moi qui parlait afin que les gens ne se doutent pas qu'il s'agit d'un texte généré par chatgpt donc pas de 'bien sur' etc. 
 Je veux aussi que tu ne coupe pas le texte au milieu d'une phrase.`}
     ];
 
